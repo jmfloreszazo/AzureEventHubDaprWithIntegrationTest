@@ -1,0 +1,26 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+ name: sub-microservice
+spec:
+ type: pubsub.azure.eventhubs
+ version: v1  
+ metadata:
+ - name: connectionString
+   secretKeyRef:
+     name: sub:ehConnectionString
+     key: sub:ehConnectionString
+ - name: storageAccountName
+   secretKeyRef:
+     name: common:storageAccountName
+     key: common:storageAccountName
+ - name: storageAccountKey
+   secretKeyRef:
+     name: common:storageAccountKey
+     key: common:storageAccountKey    
+ - name: storageContainerName
+   secretKeyRef:
+     name: common:storageContainerName
+     key: common:storageContainerName        
+auth:
+ secretStore: secret-local-store

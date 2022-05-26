@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PubSub.Samples.DotNet.Publisher": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
